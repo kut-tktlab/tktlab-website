@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="105px" height="35px" viewBox="0 0 105 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15855) - http://www.bohemiancoding.com/sketch -->
+    <title>title</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="home" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="home-mobile-portrait" sketch:type="MSArtboardGroup" transform="translate(-26.000000, -15.000000)" font-family="Source Han Sans JP">
+            <g id="header" sketch:type="MSLayerGroup">
+                <g id="title" transform="translate(26.000000, 13.000000)" sketch:type="MSTextLayer">
+                    <text id="高田研究室" font-size="18" font-weight="420" line-spacing="23" letter-spacing="3.7750001" fill="#232323">
+                        <tspan x="0" y="26">高田研究室</tspan>
+                    </text>
+                    <text id="ソフトウェア検証・解析学研究室" font-size="7" font-weight="260" line-spacing="8" fill="#242424">
+                        <tspan x="0" y="38">ソフトウェア検証・解析学研究室</tspan>
+                    </text>
+                    <text id="高知工科大学" font-size="7" font-weight="260" line-spacing="8" fill="#232323">
+                        <tspan x="0" y="8">高知工科大学</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
