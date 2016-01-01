@@ -1,0 +1,37 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+.js-showing
+  display: block !important
+
+.navbar
+  padding: 0 26px
+
+.navbar-nav
+  display: none
+  list-style-type: none
+  list-style-position: inside
+
+  @media screen and (min-width: 768px)
+    display: block
+
+    > li
+        float: left
+
+.navbar-logo
+  float: left;
+
+.collapsed-menu-btn
+  float: right;
+
+  @media screen and (min-width: 768px)
+    display: none
+
+.collapsed-menu
+  clear: both;
+
+  @media screen and (min-width: 768px)
+    clear: none;
+    float: right;
