@@ -1,13 +1,25 @@
+clearfix()
+  &:after
+    content: ''
+    display: block
+    clear: both
+
 *
   margin: 0
   padding: 0
   box-sizing: border-box
 
+body
+  font-size: 14px
+  font-family: sans-serif
+
 .js-showing
   display: block !important
 
 .navbar
-  padding: 0 26px
+  clearfix()
+  background-color: rgba(#fff, 0.9)
+  box-shadow: 0 1px 2px rgba(#000, 0.3)
 
 .navbar-nav
   display: none
@@ -21,17 +33,54 @@
         float: left
 
 .navbar-logo
+  padding: 14px 26px;
   float: left;
+  line-height: 1
 
 .collapsed-menu-btn
-  float: right;
+  padding: 25px 26px
+  font-size: 20px
+  float: right
 
   @media screen and (min-width: 768px)
     display: none
 
-.collapsed-menu
-  clear: both;
+.navbar-menu
+  clear: both
+  position: absolute
+  top: 64px
+  left: 0
+  width: 100%
+  z-index: 1
+  background-color: rgba(#fff, 0.9)
 
   @media screen and (min-width: 768px)
-    clear: none;
-    float: right;
+    clear: none
+    float: right
+    position: relative
+    top: auto
+
+  > li
+    > a
+      display: inline-block
+      padding: 16px 26px
+      width: 100%
+      border-bottom: 1px solid #eee
+      color: #242424
+      text-decoration: none
+      line-height: 1
+
+.bars
+  display: block
+  width: 16px
+  height: 14px
+
+  > .line
+    display: block
+    width: 100%
+    height: 1px
+    margin-bottom: 5px
+    background-color: rgba(#000, 0.6)
+
+    &:last-child
+      margin-bottom: 0
