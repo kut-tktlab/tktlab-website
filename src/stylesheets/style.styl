@@ -59,16 +59,25 @@ body
     float: right
     position: relative
     top: auto
+    width: auto
+    margin-right: 16px
 
   > li
+    border-bottom: 1px solid #eaeaea
+
     > a
       display: inline-block
       padding: 16px 26px
       width: 100%
-      border-bottom: 1px solid #eaeaea
       color: #242424
       text-decoration: none
       line-height: 1
+
+    @media screen and (min-width: 768px)
+      border-bottom-style: none
+
+      > a
+        padding: 25px 10px
 
 .bars
   display: block
