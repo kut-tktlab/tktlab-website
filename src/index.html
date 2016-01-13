@@ -113,12 +113,23 @@
         ele.classList.toggle('js-hidden');
       }
 
+      function closeElement(ele) {
+        ele.classList.remove('js-showing');
+      }
+
       var collapsedMenuBtn = document.querySelector('#js-collapsed-menu-btn');
+      var collapsedMenu = document.querySelector('#js-collapsed-menu');
 
       collapsedMenuBtn.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector('#js-collapsed-menu').classList.toggle('js-showing');
+        e.stopPropagation();
+        collapsedMenu.classList.toggle('js-showing');
       });
+
+      document.body.addEventListener(
+        'touchend', closeElement.bind(this, collapsedMenu));
+      document.body.addEventListener(
+        'click', closeElement.bind(this, collapsedMenu));
     </script>
   </body>
 </html>
