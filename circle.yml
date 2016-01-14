@@ -9,5 +9,5 @@ deployment:
       - npm run build
       - git add www
       - git commit -m "build files"
-      - git remote add azure $AZURE_DEPLOY_REPOSITORY
+      - git remote add azure ${AZURE_DEPLOY_REPOSITORY}
       - git push azure master
