@@ -1,5 +1,9 @@
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
+var buildTasks = ['html', 'stylesheets', 'images', 'stylesheets'];
+var destDir = './public';
+
+if (process.env.CI) destDir = './www';
 
 gulp.task('webserver', function () {
   gulp.src('public')
@@ -32,4 +36,5 @@ gulp.task('watch', function () {
   gulp.watch(['./src/images/**/*.{png,jpg,jpeg,svg}'], ['images']);
 });
 
-gulp.task('default', ['html', 'stylesheets', 'images', 'stylesheets', 'webserver', 'watch']);
+gulp.task('build', buildTasks);
+gulp.task('default', buildTasks.concat('webserver', 'watch'));

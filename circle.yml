@@ -1,0 +1,13 @@
+machine:
+  node:
+    version: 0.12.7
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - npm run build
+      - git add www
+      - git commit -m "build files"
+      - git remote add azure ${AZURE_DEPLOY_REPOSITORY}
+      - git push azure master
