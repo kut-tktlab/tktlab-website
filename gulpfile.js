@@ -1,9 +1,9 @@
 var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 var buildTasks = ['html', 'stylesheets', 'images', 'stylesheets'];
-var destDir = './public';
+var destDir = './public/';
 
-if (process.env.CI) destDir = './www';
+if (process.env.CI) destDir = './www/';
 
 gulp.task('webserver', function () {
   gulp.src('public')
@@ -16,18 +16,18 @@ gulp.task('webserver', function () {
 
 gulp.task('html', function () {
   gulp.src('./src/**/*.html')
-    .pipe(gulp.dest('./public/'));
+    .pipe(gulp.dest(destDir));
 });
 
 gulp.task('stylesheets', function () {
   gulp.src('./src/stylesheets/**/*.styl')
     .pipe(plugins.stylus())
-    .pipe(gulp.dest('./public/stylesheets'));
+    .pipe(gulp.dest(destDir + 'stylesheets'));
 });
 
 gulp.task('images', function () {
   gulp.src('./src/images/**/*.{png,jpg,jpeg,svg}')
-    .pipe(gulp.dest('./public/images'));
+    .pipe(gulp.dest(destDir + 'images'));
 });
 
 gulp.task('watch', function () {
