@@ -20,25 +20,25 @@
           <span class="line"></span>
         </span>
       </a>
-
-      <ul id="js-collapsed-menu" class="navbar-nav navbar-menu">
-        <li>
-          <a href="#">ホーム</a>
-        </li>
-        <li>
-          <a href="#">研究</a>
-        </li>
-        <li>
-          <a href="#">活動</a>
-        </li>
-        <li>
-          <a href="#">メンバー</a>
-        </li>
-        <li>
-          <a href="#">コンタクト</a>
-        </li>
-      </ul>
     </nav>
+
+    <ul id="js-collapsed-menu" class="navbar-nav navbar-menu">
+      <li>
+        <a href="#">ホーム</a>
+      </li>
+      <li>
+        <a href="#">研究</a>
+      </li>
+      <li>
+        <a href="#">活動</a>
+      </li>
+      <li>
+        <a href="#">メンバー</a>
+      </li>
+      <li>
+        <a href="#">コンタクト</a>
+      </li>
+    </ul>
 
     <div class="container">
       <aside class="message">
@@ -111,11 +111,15 @@
     </footer>
     <script>
       function toggleElement(ele) {
-        ele.classList.toggle('js-hidden');
+        console.log('toggle');
+        ele.classList.toggle('js-showing');
       }
 
       function closeElement(ele) {
-        ele.classList.remove('js-showing');
+        console.log('close');
+        if (ele.classList.contains('js-showing')) {
+          ele.classList.remove('js-showing');
+        }
       }
 
       var collapsedMenuBtn = document.querySelector('#js-collapsed-menu-btn');
@@ -124,13 +128,13 @@
       collapsedMenuBtn.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
-        collapsedMenu.classList.toggle('js-showing');
+        toggleElement(collapsedMenu);
       });
-
-      document.body.addEventListener(
-        'touchend', closeElement.bind(this, collapsedMenu));
-      document.body.addEventListener(
-        'click', closeElement.bind(this, collapsedMenu));
+      //
+      // document.body.addEventListener(
+      //   'touchend', closeElement.bind(this, collapsedMenu));
+      // document.body.addEventListener(
+      //   'click', closeElement.bind(this, collapsedMenu));
     </script>
   </body>
 </html>
