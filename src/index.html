@@ -14,15 +14,20 @@
       </div>
 
       <a id="js-collapsed-menu-btn" class="collapsed-menu-btn" href="#">
-        <span class="bars">
+        <span id="js-collapsed-menu-btn-open" class="bars-icon">
           <span class="line"></span>
           <span class="line"></span>
           <span class="line"></span>
         </span>
+
+        <span id="js-collapsed-menu-btn-close" class="close-icon js-hidden">
+          <span class="line-1"></span>
+          <span class="line-2"></span>
+        </span>
       </a>
     </nav>
 
-    <ul id="js-collapsed-menu" class="navbar-nav navbar-menu">
+    <ul id="js-collapsed-menu" class="navbar-nav navbar-menu js-hidden">
       <li>
         <a href="#">ホーム</a>
       </li>
@@ -110,25 +115,16 @@
 
     </footer>
     <script>
-      function toggleElement(ele) {
-        console.log('toggle');
-        ele.classList.toggle('js-showing');
-      }
-
-      function closeElement(ele) {
-        console.log('close');
-        if (ele.classList.contains('js-showing')) {
-          ele.classList.remove('js-showing');
-        }
-      }
-
       var collapsedMenuBtn = document.querySelector('#js-collapsed-menu-btn');
       var collapsedMenu = document.querySelector('#js-collapsed-menu');
+      var openIcon = document.querySelector('#js-collapsed-menu-btn-open');
+      var closeIcon = document.querySelector('#js-collapsed-menu-btn-close');
 
       collapsedMenuBtn.addEventListener('click', function (e) {
         e.preventDefault();
-        e.stopPropagation();
-        toggleElement(collapsedMenu);
+        collapsedMenu.classList.toggle('js-hidden');
+        closeIcon.classList.toggle('js-hidden');
+        openIcon.classList.toggle('js-hidden');
       });
       //
       // document.body.addEventListener(

@@ -135,6 +135,9 @@ a
 .js-showing
   display: block !important
 
+.js-hidden
+  display: none !important
+
 .mobile-hidden
   display: none
 
@@ -150,12 +153,11 @@ a
   z-index: 1
 
 .navbar-nav
-  display: none
   list-style-type: none
   list-style-position: inside
 
   +fortablet()
-    display: block
+    display: block !important
 
     > li
         float: left
@@ -217,7 +219,7 @@ a
 .wide-text
   letter-spacing: 0.2em
 
-.bars
+.bars-icon
   display: block
   width: 16px
   height: 14px
@@ -231,6 +233,28 @@ a
 
     &:last-child
       margin-bottom: 0
+
+.close-icon
+  display: block
+  position: relative
+  width: 18px
+  height: 14px
+
+  > .line-1
+  > .line-2
+    display: block
+    position: absolute
+    top: 6px
+    left: 1px
+    width: 100%
+    height: 1px
+    background-color: rgba(#000, 0.6)
+
+  > .line-1
+    transform: rotate(45deg)
+
+  > .line-2
+    transform: rotate(-45deg)
 
 .message
   position: relative
