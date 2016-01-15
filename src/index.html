@@ -14,31 +14,36 @@
       </div>
 
       <a id="js-collapsed-menu-btn" class="collapsed-menu-btn" href="#">
-        <span class="bars">
+        <span id="js-collapsed-menu-btn-open" class="bars-icon">
           <span class="line"></span>
           <span class="line"></span>
           <span class="line"></span>
         </span>
-      </a>
 
-      <ul id="js-collapsed-menu" class="navbar-nav navbar-menu">
-        <li>
-          <a href="#">ホーム</a>
-        </li>
-        <li>
-          <a href="#">研究</a>
-        </li>
-        <li>
-          <a href="#">活動</a>
-        </li>
-        <li>
-          <a href="#">メンバー</a>
-        </li>
-        <li>
-          <a href="#">コンタクト</a>
-        </li>
-      </ul>
+        <span id="js-collapsed-menu-btn-close" class="close-icon js-hidden">
+          <span class="line-1"></span>
+          <span class="line-2"></span>
+        </span>
+      </a>
     </nav>
+
+    <ul id="js-collapsed-menu" class="navbar-nav navbar-menu js-hidden">
+      <li>
+        <a href="#">ホーム</a>
+      </li>
+      <li>
+        <a href="#">研究</a>
+      </li>
+      <li>
+        <a href="#">活動</a>
+      </li>
+      <li>
+        <a href="#">メンバー</a>
+      </li>
+      <li>
+        <a href="#">コンタクト</a>
+      </li>
+    </ul>
 
     <div class="container">
       <aside class="message">
@@ -110,27 +115,22 @@
 
     </footer>
     <script>
-      function toggleElement(ele) {
-        ele.classList.toggle('js-hidden');
-      }
-
-      function closeElement(ele) {
-        ele.classList.remove('js-showing');
-      }
-
       var collapsedMenuBtn = document.querySelector('#js-collapsed-menu-btn');
       var collapsedMenu = document.querySelector('#js-collapsed-menu');
+      var openIcon = document.querySelector('#js-collapsed-menu-btn-open');
+      var closeIcon = document.querySelector('#js-collapsed-menu-btn-close');
 
       collapsedMenuBtn.addEventListener('click', function (e) {
         e.preventDefault();
-        e.stopPropagation();
-        collapsedMenu.classList.toggle('js-showing');
+        collapsedMenu.classList.toggle('js-hidden');
+        closeIcon.classList.toggle('js-hidden');
+        openIcon.classList.toggle('js-hidden');
       });
-
-      document.body.addEventListener(
-        'touchend', closeElement.bind(this, collapsedMenu));
-      document.body.addEventListener(
-        'click', closeElement.bind(this, collapsedMenu));
+      //
+      // document.body.addEventListener(
+      //   'touchend', closeElement.bind(this, collapsedMenu));
+      // document.body.addEventListener(
+      //   'click', closeElement.bind(this, collapsedMenu));
     </script>
   </body>
 </html>
