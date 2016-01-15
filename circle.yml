@@ -6,10 +6,11 @@ deployment:
   production:
     branch: master
     commands:
-      - npm run build
       - git config --global user.email "circleci@example.com"
       - git config --global user.name "circleci"
+      - git remote add azure ${AZURE_DEPLOY_REPOSITORY}
+      - git pull azure master
+      - npm run build
       - git add www
       - git commit -m "build files"
-      - git remote add azure ${AZURE_DEPLOY_REPOSITORY}
       - git push azure master
