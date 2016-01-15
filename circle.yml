@@ -7,6 +7,8 @@ deployment:
     branch: master
     commands:
       - npm run build
+      - git config --global user.email "circleci@example.com"
+      - git config --global user.name "circleci"
       - git add www
       - git commit -m "build files"
       - git remote add azure ${AZURE_DEPLOY_REPOSITORY}
