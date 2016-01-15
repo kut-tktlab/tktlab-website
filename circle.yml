@@ -9,7 +9,7 @@ deployment:
       - git config --global user.email "circleci@example.com"
       - git config --global user.name "circleci"
       - git remote add azure ${AZURE_DEPLOY_REPOSITORY}
-      - git pull azure master --no-edit
+      - git pull --no-edit azure master
       - npm run build
       - git add www
       - git commit -m "build files"
