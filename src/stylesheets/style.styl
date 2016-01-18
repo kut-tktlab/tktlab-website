@@ -171,6 +171,10 @@ a
   padding: 25px 26px
   font-size: 20px
   float: right
+  transition: 0.25s background-color ease
+
+  &:hover
+    background-color: rgba(0, 0, 0, 0.1)
 
   +fortablet()
     display: none
@@ -208,6 +212,10 @@ a
       color: #242424
       text-decoration: none
       line-height: 1
+      transition: 0.25s background-color ease
+
+      &:hover
+        background-color: rgba(0, 0, 0, 0.1)
 
     +fortablet()
       border-bottom-style: none
@@ -223,7 +231,7 @@ a
 
 .bars-icon
   display: block
-  width: 16px
+  width: 18px
   height: 14px
 
   > .line
