@@ -335,22 +335,22 @@ a
     text-decoration: none
     color: #fff
     z-index: 1
-    //
-    // &:after
-    //   content: ''
-    //   display: block
-    //   left: 0
-    //   top: 0
-    //   width: 100%
-    //   height: 100%
-    //   z-index: 1
-    //   position: absolute
-    //   background-color: rgba(0, 0, 0, 0)
-    //   transition: background-color 0.2s ease
+
+    &:after
+      content: ''
+      display: block
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      z-index: 1
+      position: absolute
+      background-color: rgba(255, 255, 255, 0)
+      transition: background-color 0.2s ease
 
     &:hover
-      // &:after
-      //   background-color: rgba(0, 0, 0, 0.6)
+      &:after
+        background-color: rgba(255, 255, 255, 0.4)
 
       .activity-item-header
         background-color: rgba(0, 0, 0, 0.6)
